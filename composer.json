@@ -1,5 +1,5 @@
 {
-  "name": "mmertz/youtubeAPI",
+  "name": "mmertz/youtube-api",
   "description": "Laravel PHP Facade/Wrapper for the Youtube Data API v3",
   "keywords": ["youtube", "api", "video", "laravel"],
   "license": "MIT",
