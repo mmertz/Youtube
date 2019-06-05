@@ -1,6 +1,6 @@
 <?php
 
-namespace Mmertz\Youtube;
+namespace mmertz\Youtube;
 
 use Illuminate\Support\ServiceProvider;
 

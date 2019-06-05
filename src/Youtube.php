@@ -1,6 +1,6 @@
 <?php
 
-namespace Mmertz\Youtube;
+namespace mmertz\Youtube;
 
 class Youtube
 {
@@ -251,6 +251,33 @@ class Youtube
     }
 
     /**
+     * Get streams
+     *
+     * @param  string $channelId
+     * @param  string $type
+     * @param  integer $maxResults
+     * @param  string $order
+     * @param  array $part
+     * @param  $pageInfo
+     * @return array
+     */
+    public function searchStream($channelId, $type, $maxResults = 50, $order = null, $part = ['id', 'snippet'], $pageInfo = false)
+    {
+        $params = [
+            'type' => 'video',
+            'eventType' => $type,
+            'channelId' => $channelId,
+            'part' => implode(', ', $part),
+            'maxResults' => $maxResults,
+        ];
+        if (!empty($order)) {
+            $params['order'] = $order;
+        }
+
+        return $this->searchAdvanced($params, $pageInfo);
+    }
+
+    /**
      * List videos in the channel
      *
      * @param  string $channelId
@@ -260,7 +287,7 @@ class Youtube
      * @param  $pageInfo
      * @return array
      */
-    public function listChannelVideos($channelId, $maxResults = 10, $order = null, $part = ['id', 'snippet'], $pageInfo = false)
+    public function listChannelVideos($channelId, $maxResults = 10, $pageInfo = false, $order = null, $part = ['id', 'snippet'])
     {
         $params = [
             'type' => 'video',
