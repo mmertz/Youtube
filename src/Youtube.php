@@ -1,6 +1,6 @@
 <?php
 
-namespace Alaouy\Youtube;
+namespace Mmertz\Youtube;
 
 class Youtube
 {

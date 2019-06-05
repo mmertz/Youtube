@@ -1,6 +1,6 @@
 <?php
 
-namespace Alaouy\Youtube\Facades;
+namespace Mmertz\Youtube\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
